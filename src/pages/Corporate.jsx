@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, Building2, PaintBucket, Palette, ShieldCheck, MonitorSmartphone, Quote, ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import hill from "../assets/hill.jpg";
+import royal2 from "../assets/royal2.jpg";
+import Destination from "../assets/Destination.jpg";
+import royal from "../assets/royal.jpg";
 
 const corporateClients = [
   { name: 'IBM', icon: <Briefcase className="w-12 h-12 text-blue-600" />, desc: 'High-end corporate tech summits & product launches.', color: 'bg-blue-50' },
@@ -18,6 +25,29 @@ const testimonials = [
   { name: 'Priya Patel', company: 'Samsung', quote: 'The tech expo was a hit, thanks to VK Wedding’s innovative approach and seamless planning.' },
 ];
 
+const corporateEvents = [
+  {
+    title: "Corporate Retreats",
+    description: "Inspiring team-building in serene settings.",
+    image: hill,
+  },
+  {
+    title: "Gala Dinners",
+    description: "Elegant evenings with bespoke decor.",
+    image: royal2,
+  },
+  {
+    title: "Conferences & Summits",
+    description: "Seamless events with cutting-edge tech.",
+    image: Destination,
+  },
+  {
+    title: "Product Launches",
+    description: "Unforgettable unveilings with grandeur.",
+    image: royal,
+  },
+];
+
 const CorporateEvents = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -29,6 +59,32 @@ const CorporateEvents = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <Helmet>
@@ -37,7 +93,7 @@ const CorporateEvents = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative h-[70vh] bg-gradient-to-br from-rose-600 to-indigo-700 text-white  flex items-center overflow-hidden">
+      <section className="relative h-[70vh] bg-gradient-to-br from-rose-600 to-indigo-700 text-white flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-pattern opacity-10" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/diagmonds.png')" }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h1
@@ -56,16 +112,15 @@ const CorporateEvents = () => {
           >
             Partner with us to create unforgettable corporate experiences that inspire, engage, and elevate your brand.
           </motion.p>
-        <motion.a
-  href="/contact"
-  initial={{ opacity: 0, scale: 0.8 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8, delay: 0.4 }}
-  className="inline-flex items-center bg-white text-rose-600 font-semibold px-8 py-3 rounded-full hover:bg-rose-50 transition duration-300"
->
-  Get in Touch <ArrowRight className="ml-2 w-5 h-5" />
-</motion.a>
-
+          <motion.a
+            href="/contact"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="inline-flex items-center bg-white text-rose-600 font-semibold px-8 py-3 rounded-full hover:bg-rose-50 transition duration-300"
+          >
+            Get in Touch <ArrowRight className="ml-2 w-5 h-5" />
+          </motion.a>
         </div>
       </section>
 
@@ -101,7 +156,7 @@ const CorporateEvents = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section with Image Carousel */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
@@ -113,7 +168,34 @@ const CorporateEvents = () => {
           >
             Our Corporate Event Services
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <Slider {...sliderSettings}>
+            {corporateEvents.map((event, index) => (
+              <div key={index} className="px-2">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="relative h-80 rounded-2xl overflow-hidden shadow-lg group"
+                >
+                  <img
+                    src={event.image}
+                    alt={`${event.title} corporate event`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent h-1/3 flex flex-col justify-end p-4">
+                    <h3 className="font-playfair text-lg font-bold text-white text-shadow mb-1">
+                      {event.title}
+                    </h3>
+                    <p className="text-sm text-white/90 text-shadow line-clamp-2">
+                      {event.description}
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            ))}
+          </Slider>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             {[
               { title: 'Event Planning & Management', desc: 'End-to-end planning, from venue selection to logistics and on-site coordination.' },
               { title: 'Brand Activations', desc: 'Creative campaigns and immersive experiences to boost brand visibility.' },

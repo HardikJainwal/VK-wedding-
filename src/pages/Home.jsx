@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { ArrowRight, Star, MapPin, Calendar, Users } from 'lucide-react';
+import { ArrowRight, Star, MapPin, Calendar, Users, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
@@ -17,15 +17,15 @@ import hill from "../assets/hill.jpg";
 import royal2 from "../assets/royal2.jpg";
 import Destination from "../assets/Destination.jpg";
 import royal from "../assets/royal.jpg";
-import goa from "../assets/Goa.jpg"
-import Rajasthan from "../assets/Rajasthan.jpg"
-import Himachal from "../assets/Himachal.jpg"
-import Jim from "../assets/Jim-corbett.jpg"
-import nanital from "../assets/Nainital.jpg"
+import goa from "../assets/Goa.jpg";
+import Rajasthan from "../assets/Rajasthan.jpg";
+import Himachal from "../assets/Himachal.jpg";
+import Jim from "../assets/Jim-corbett.jpg";
+import nanital from "../assets/Nainital.jpg";
 import test from '../assets/test-1.jpg';
 import test2 from '../assets/test-2.jpg';
 import test3 from '../assets/test-3.jpg';
-
+import test4 from '../assets/Corporate.jpg';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -36,33 +36,33 @@ const Home = () => {
   };
 
   const destinations = [
-  {
-    name: "Goa",
-    description: "Golden beaches and Portuguese charm create the perfect backdrop for beachside celebrations and intimate ceremonies.",
-    image: goa
-  },
-  {
-    name: "Rajasthan",
-    description: "Majestic palaces and royal heritage offer regal wedding experiences in the land of kings and queens.",
-    image: Rajasthan
-  },
-  {
-    name: "Himachal Pradesh",
-    description: "Snow-capped mountains and pristine valleys provide a serene and picturesque setting for mountain weddings.",
-    image: Himachal
-  },
-  {
-    name: "Jim Corbett",
-    description: "Wildlife sanctuary surroundings offer unique jungle-themed celebrations amidst nature's wilderness.",
-    image: Jim
-  },
-  {
-    name: "Nainital",
-    description: "Lake town charm with misty hills creates romantic lakeside wedding venues in the heart of Uttarakhand.",
-    image: nanital
-  }
-];
-  // Wedding Types Array
+    {
+      name: "Goa",
+      description: "Golden beaches and Portuguese charm create the perfect backdrop for beachside celebrations and intimate ceremonies.",
+      image: goa
+    },
+    {
+      name: "Rajasthan",
+      description: "Majestic palaces and royal heritage offer regal wedding experiences in the land of kings and queens.",
+      image: Rajasthan
+    },
+    {
+      name: "Himachal Pradesh",
+      description: "Snow-capped mountains and pristine valleys provide a serene and picturesque setting for mountain weddings.",
+      image: Himachal
+    },
+    {
+      name: "Jim Corbett",
+      description: "Wildlife sanctuary surroundings offer unique jungle-themed celebrations amidst nature's wilderness.",
+      image: Jim
+    },
+    {
+      name: "Nainital",
+      description: "Lake town charm with misty hills creates romantic lakeside wedding venues in the heart of Uttarakhand.",
+      image: nanital
+    }
+  ];
+
   const weddingTypes = [
     {
       title: "Hill Station Wedding",
@@ -83,6 +83,29 @@ const Home = () => {
       title: "Luxury Palace Wedding",
       description: "Tie the knot in opulent palaces with timeless charm.",
       image: royal,
+    },
+  ];
+
+  const corporateEvents = [
+    {
+      title: "Corporate Retreats",
+      description: "Inspiring team-building experiences in serene hill stations or luxury resorts.",
+      image: hill,
+    },
+    {
+      title: "Gala Dinners",
+      description: "Elegant evenings with bespoke decor and world-class entertainment.",
+      image: royal2,
+    },
+    {
+      title: "Conferences & Summits",
+      description: "Seamless events with cutting-edge technology and sophisticated venues.",
+      image: Destination,
+    },
+    {
+      title: "Product Launches",
+      description: "Unforgettable unveilings with grandeur and meticulous planning.",
+      image: test4,
     },
   ];
 
@@ -137,8 +160,6 @@ const Home = () => {
     };
   }, []);
 
-  
-
   const stats = [
     { icon: Calendar, number: '500+', label: 'Weddings Planned' },
     { icon: Users, number: '1000+', label: 'Happy Couples' },
@@ -147,29 +168,25 @@ const Home = () => {
   ];
 
   const testimonials = [
-  {
-    name: "Riya & Aarav",
-    rating: 5,
-    review:
-      "VK Wedding Planners made our destination wedding truly magical. Every detail was perfect and beyond our expectations!",
-    image: test,
-  },
-  {
-    name: "Priya & Karan",
-    rating: 5,
-    review:
-      "They brought our royal wedding dream to life. Flawless execution and beautiful decor!",
-    image: test2,
-  },
-  {
-    name: "Sneha & Rahul",
-    rating: 5,
-    review:
-      "Professional, creative, and always available. We felt completely at ease throughout the process.",
-    image: test3,
-  },
-];
-
+    {
+      name: "Riya & Aarav",
+      rating: 5,
+      review: "VK Wedding Planners made our destination wedding truly magical. Every detail was perfect and beyond our expectations!",
+      image: test,
+    },
+    {
+      name: "Priya & Karan",
+      rating: 5,
+      review: "They brought our royal wedding dream to life. Flawless execution and beautiful decor!",
+      image: test2,
+    },
+    {
+      name: "Sneha & Rahul",
+      rating: 5,
+      review: "Professional, creative, and always available. We felt completely at ease throughout the process.",
+      image: test3,
+    },
+  ];
 
   const sliderSettings = {
     dots: true,
@@ -339,7 +356,7 @@ const Home = () => {
                     alt={`${type.title} wedding ceremony`}
                     src={type.image}
                   />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20"></div>
 
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="font-playfair text-xl font-bold text-white mb-2">
@@ -356,7 +373,7 @@ const Home = () => {
         </div>
       </section>
 
-       <section className="py-20 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -474,6 +491,86 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4 bg-gradient-to-br from-cream to-white floral-pattern">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              Elevate Your <span className="text-gradient bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">Corporate Moments</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From high-impact conferences to elegant galas, we craft corporate events that inspire, connect, and leave lasting impressions.
+            </p>
+          </motion.div>
+
+          <div className="relative">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {corporateEvents.map((event, index) => (
+      <motion.div
+        key={event.title}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        viewport={{ once: true }}
+        className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+      >
+        <div className="relative h-72">
+          <img
+            src={event.image}
+            alt={`${event.title} corporate event`}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-500"></div>
+          <div className="absolute bottom-0 left-0 right-0 bg-black/60 py-3 px-4">
+            <h3 className="font-playfair text-base md:text-lg font-bold text-white mb-1 drop-shadow-md">
+              {event.title}
+            </h3>
+            <p className="text-xs md:text-sm text-white/90 drop-shadow-sm line-clamp-2">
+              {event.description}
+            </p>
+          </div>
+        </div>
+        <motion.div
+          className="absolute inset-0 bg-rose-600/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          whileHover={{ scale: 1.05 }}
+        >
+          <Button
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-rose-600 px-4 py-1 rounded-full flex items-center text-sm"
+            onClick={handleNavigateToContact}
+          >
+            Learn More
+            <ArrowRight className="ml-2 w-3 h-3" />
+          </Button>
+        </motion.div>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
+            <Button
+              onClick={handleNavigateToContact}
+              className="bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white px-8 py-4 text-lg rounded-full shadow-xl"
+            >
+              Plan Your Corporate Event
+              <Briefcase className="ml-2 w-5 h-5" />
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -504,11 +601,10 @@ const Home = () => {
                 <div className="bg-white rounded-2xl shadow-xl p-6 border border-rose-100">
                   <div className="flex items-center mb-4">
                     <img
-  src={testimonial.image}
-  alt={`${testimonial.name} profile`}
-  className="w-16 h-16 rounded-full object-cover mr-4"
-/>
-
+                      src={testimonial.image}
+                      alt={`${testimonial.name} profile`}
+                      className="w-16 h-16 rounded-full object-cover mr-4"
+                    />
                     <div>
                       <h3 className="font-playfair text-xl font-bold text-gray-800">
                         {testimonial.name}

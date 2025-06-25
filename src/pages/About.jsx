@@ -195,7 +195,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-gradient-to-br from-cream to-white">
+      {/* <section className="section-padding bg-gradient-to-br from-cream to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -243,7 +243,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -9,9 +9,6 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Instagram, href: 'https://instagram.com', name: 'Instagram' },
-    { icon: Facebook, href: 'https://facebook.com', name: 'Facebook' },
-    { icon: Twitter, href: 'https://twitter.com', name: 'Twitter' },
-    { icon: Linkedin, href: 'https://linkedin.com', name: 'LinkedIn' },
   ];
 
   const footerLinks = [
@@ -69,7 +66,7 @@ const Footer = () => {
             <p className="font-playfair text-xl font-semibold text-gray-800 mb-4">Get In Touch</p>
             <ul className="space-y-2 text-sm">
               <li className="text-gray-600">House no.30 site 1 Vikaspuri, New Delhi, 110018</li>
-              <li className="text-gray-600"> info@vkweddingplanner.com </li>
+              <li className="text-gray-600"> info@vkweddingplanner.in</li>
               <li className="text-gray-600">+91 8368263181</li>
             </ul>
             

@@ -17,6 +17,12 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import destinationImg from '../assets/Destination.jpg';
+import royalImg from '../assets/royal.jpg';
+import beachImg from '../assets/Goa.jpg';
+import hillImg from '../assets/hill.jpg';
+import corporateImg from '../assets/royal2.jpg';
+
 
 const weddingServicesData = [
   {
@@ -24,7 +30,7 @@ const weddingServicesData = [
     title: 'Destination Weddings',
     description: 'Exotic locations, seamless planning, unforgettable experiences',
     features: ['International & domestic destinations', 'Travel coordination', 'Local vendor management', 'Guest accommodation'],
-    image: 'Stunning destination wedding setup on a tropical beach with palm trees',
+    image: destinationImg,
     color: 'from-blue-400 to-blue-500'
   },
   {
@@ -32,7 +38,7 @@ const weddingServicesData = [
     title: 'Royal Weddings',
     description: 'Majestic celebrations fit for royalty with grandeur and elegance',
     features: ['Palace venues', 'Traditional ceremonies', 'Royal decorations', 'Heritage experiences'],
-    image: 'Luxurious royal wedding ceremony in an ornate palace with golden decorations',
+    image: royalImg,
     color: 'from-purple-400 to-purple-500'
   },
   {
@@ -40,7 +46,7 @@ const weddingServicesData = [
     title: 'Beach Weddings',
     description: 'Romantic seaside ceremonies with ocean breeze and sunset views',
     features: ['Beachfront venues', 'Nautical themes', 'Sunset ceremonies', 'Coastal cuisine'],
-    image: 'Romantic beach wedding ceremony at sunset with white decorations',
+    image: beachImg,
     color: 'from-cyan-400 to-cyan-500'
   },
   {
@@ -48,7 +54,7 @@ const weddingServicesData = [
     title: 'Hill Station Weddings',
     description: 'Scenic mountain celebrations with breathtaking valley views',
     features: ['Mountain resorts', 'Scenic backdrops', 'Adventure activities', 'Cozy atmospheres'],
-    image: 'Beautiful hill station wedding with mountain backdrop and valley views',
+    image: hillImg,
     color: 'from-green-400 to-green-500'
   },
   {
@@ -56,10 +62,11 @@ const weddingServicesData = [
     title: 'Corporate Events',
     description: 'Professional event management for corporate celebrations',
     features: ['Conference planning', 'Team building events', 'Product launches', 'Award ceremonies'],
-    image: 'Elegant corporate event setup with professional lighting and branding',
+    image: corporateImg,
     color: 'from-gray-400 to-gray-500'
   }
 ];
+
 
 const additionalServicesData = [
   {
@@ -107,9 +114,11 @@ const WeddingServiceCard = ({ service, index, onButtonClick }) => (
   >
     <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
       <div className="glass-effect rounded-3xl p-8 shadow-2xl">
-        <img  
-          className="w-full h-80 object-cover rounded-2xl"
-          alt={`${service.title} wedding service`} src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+       <img  
+  className="w-full h-80 object-cover rounded-2xl"
+  alt={`${service.title} wedding service`} 
+  src={service.image} />
+
       </div>
     </div>
 

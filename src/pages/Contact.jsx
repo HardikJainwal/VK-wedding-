@@ -26,8 +26,8 @@ const contactInfoData = [
   {
     icon: Mail,
     title: "Email",
-    details: ["hello@eternalbliss.com"],
-    href: "mailto:hello@eternalbliss.com",
+    details: ["info@vkweddingplanner.in"],
+    href: "mailto:info@vkweddingplanner.in",
   },
   {
     icon: MapPin,
@@ -79,15 +79,16 @@ const budgetRangesData = [
 
 const faqData = [
   {
-    question: "How far in advance should we book your services?",
-    answer:
-      "We recommend booking 6-12 months in advance for destination weddings and 3-6 months for local celebrations to ensure the best vendor availability and planning time.",
-  },
-  {
-    question: "Do you provide services outside of India?",
-    answer:
-      "Yes! We specialize in destination weddings and have successfully planned celebrations in various international locations including Thailand, Bali, Dubai, and Europe.",
-  },
+  question: "How far in advance should we book your services?",
+  answer:
+    "You can reach out to us at any time! We are equipped to start planning immediately and accommodate both last-minute and well-planned weddings with equal attention to detail.",
+},
+
+ {
+  question: "Do you offer wedding planning services across different states in India?",
+  answer:
+    "Absolutely! We plan and manage weddings across all major cities and states in India, ensuring a seamless experience no matter the location.",
+},
   {
     question: "What's included in your wedding planning packages?",
     answer:
@@ -119,7 +120,13 @@ const ContactForm = ({
         Let's Plan Your <span className="text-gradient">Dream Wedding</span>
       </h2>
 
-      <form onSubmit={onSubmit} className="space-y-6">
+      <form
+        action="https://formspree.io/f/mldnojrr"
+        method="POST"
+        className="space-y-6"
+      >
+        <input type="hidden" name="_captcha" value="false" />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label
@@ -220,28 +227,7 @@ const ContactForm = ({
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300"
             />
           </div>
-          <div>
-            <label
-              htmlFor="budget"
-              className="block text-gray-700 font-medium mb-2"
-            >
-              Budget Range
-            </label>
-            <select
-              name="budget"
-              id="budget"
-              value={formData.budget}
-              onChange={onInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-300"
-            >
-              <option value="">Select budget range</option>
-              {budgetRanges.map((range) => (
-                <option key={range} value={range}>
-                  {range}
-                </option>
-              ))}
-            </select>
-          </div>
+          <div></div>
         </div>
 
         <div>
@@ -281,7 +267,7 @@ const ContactInfoCard = ({ info, index, onActionClick }) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay: index * 0.1 }}
     viewport={{ once: true }}
-    className="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
+    className="card-hover bg-white rounded-2xl p-4 shadow-lg border border-gray-100"
   >
     <div className="flex items-start space-x-4">
       <div className="flex-shrink-0">
@@ -320,7 +306,7 @@ const ContactInfoCard = ({ info, index, onActionClick }) => (
           }}
           className="text-rose-600 hover:text-rose-700 font-medium mt-2 transition-colors inline-block"
         >
-          {info.action} →
+          {info.action} 
         </a>
       </div>
     </div>
@@ -538,29 +524,26 @@ const Contact = () => {
             </p>
           </motion.div>
 
-        <motion.div
-  initial={{ opacity: 0, scale: 0.9 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
-  className="glass-effect rounded-3xl p-8 shadow-2xl"
->
-  <div className="overflow-hidden rounded-2xl w-full h-[450px]">
-    <iframe
-      title="VK Wedding Planner Location"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14007.187233664046!2d77.0642861410053!3d28.635851343781983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0511e951c505%3A0xcc10d2aa78b79bcf!2sVK%20Wedding%20Planner!5e0!3m2!1sen!2sin!4v1750620060479!5m2!1sen!2sin"
-      width="100%"
-      height="100%"
-      style={{ border: 0 }}
-      allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
-</motion.div>
-
-
-          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="glass-effect rounded-3xl p-8 shadow-2xl"
+          >
+            <div className="overflow-hidden rounded-2xl w-full h-[450px]">
+              <iframe
+                title="VK Wedding Planner Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14007.187233664046!2d77.0642861410053!3d28.635851343781983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0511e951c505%3A0xcc10d2aa78b79bcf!2sVK%20Wedding%20Planner!5e0!3m2!1sen!2sin!4v1750620060479!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </motion.div>
         </div>
       </section>
 
