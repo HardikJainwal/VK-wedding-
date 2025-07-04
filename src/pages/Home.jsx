@@ -25,7 +25,12 @@ import nanital from "../assets/Nainital.jpg";
 import test from '../assets/test-1.jpg';
 import test2 from '../assets/test-2.jpg';
 import test3 from '../assets/test-3.jpg';
-import test4 from '../assets/Corporate.jpg';
+import ibm from "../assets/corporate1.jpg"; // Updated image for IBM
+import wipro from "../assets/wipro.jpeg";
+import asianPaints from "../assets/asian.jpeg";
+import kamdhenu from "../assets/kamdhenu.jpg";
+import samsung from "../assets/samsung.jpg";
+import insurance from "../assets/insurane.jpeg"; // Note: Corrected typo in filename (insurane -> insurance)
 
 const Home = () => {
   const navigate = useNavigate();
@@ -88,24 +93,34 @@ const Home = () => {
 
   const corporateEvents = [
     {
-      title: "Corporate Retreats",
-      description: "Inspiring team-building experiences in serene hill stations or luxury resorts.",
-      image: hill,
+      title: "IBM Corporate Events",
+      description: "Innovative corporate gatherings tailored for IBM's global vision and tech-driven culture.",
+      image: ibm,
     },
     {
-      title: "Gala Dinners",
-      description: "Elegant evenings with bespoke decor and world-class entertainment.",
-      image: royal2,
+      title: "Wipro Corporate Retreats",
+      description: "Transformative retreats for Wipro, fostering collaboration in inspiring settings.",
+      image: wipro,
     },
     {
-      title: "Conferences & Summits",
-      description: "Seamless events with cutting-edge technology and sophisticated venues.",
-      image: Destination,
+      title: "Asian Paints Conferences",
+      description: "Vibrant and creative conferences for Asian Paints, blending innovation with elegance.",
+      image: asianPaints,
     },
     {
-      title: "Product Launches",
-      description: "Unforgettable unveilings with grandeur and meticulous planning.",
-      image: test4,
+      title: "Kamdhenu Paints Product Launches",
+      description: "Bold and colorful product launches for Kamdhenu Paints, showcasing quality and creativity.",
+      image: kamdhenu,
+    },
+    {
+      title: "Samsung Gala Events",
+      description: "Cutting-edge gala events for Samsung, celebrating innovation with sophistication.",
+      image: samsung,
+    },
+    {
+      title: "Insurance Company Summits",
+      description: "Strategic summits for Insurance Company, designed for impact and engagement.",
+      image: insurance,
     },
   ];
 
@@ -171,7 +186,7 @@ const Home = () => {
     {
       name: "Riya & Aarav",
       rating: 5,
-      review: "VK Wedding Planners made our destination wedding truly magical. Every detail was perfect and beyond our expectations!",
+      review: "VK Wedding Planners & Events made our destination wedding truly magical. Every detail was perfect and beyond our expectations!",
       image: test,
     },
     {
@@ -509,7 +524,7 @@ const Home = () => {
           </motion.div>
 
           <div className="relative">
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
     {corporateEvents.map((event, index) => (
       <motion.div
         key={event.title}

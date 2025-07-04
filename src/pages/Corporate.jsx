@@ -5,10 +5,12 @@ import { Helmet } from 'react-helmet';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import hill from "../assets/hill.jpg";
-import royal2 from "../assets/royal2.jpg";
-import Destination from "../assets/Destination.jpg";
-import royal from "../assets/royal.jpg";
+import ibm from "../assets/corporate1.jpg"; // Updated image for IBM
+import wipro from "../assets/wipro.jpeg";
+import asianPaints from "../assets/asian.jpeg";
+import kamdhenu from "../assets/kamdhenu.jpg";
+import samsung from "../assets/samsung.jpg";
+import insurance from "../assets/insurane.jpeg";
 
 const corporateClients = [
   { name: 'IBM', icon: <Briefcase className="w-12 h-12 text-blue-600" />, desc: 'High-end corporate tech summits & product launches.', color: 'bg-blue-50' },
@@ -26,27 +28,37 @@ const testimonials = [
 ];
 
 const corporateEvents = [
-  {
-    title: "Corporate Retreats",
-    description: "Inspiring team-building in serene settings.",
-    image: hill,
-  },
-  {
-    title: "Gala Dinners",
-    description: "Elegant evenings with bespoke decor.",
-    image: royal2,
-  },
-  {
-    title: "Conferences & Summits",
-    description: "Seamless events with cutting-edge tech.",
-    image: Destination,
-  },
-  {
-    title: "Product Launches",
-    description: "Unforgettable unveilings with grandeur.",
-    image: royal,
-  },
-];
+    {
+      title: "IBM Corporate Events",
+      description: "Innovative corporate gatherings tailored for IBM's global vision and tech-driven culture.",
+      image: ibm,
+    },
+    {
+      title: "Wipro Corporate Retreats",
+      description: "Transformative retreats for Wipro, fostering collaboration in inspiring settings.",
+      image: wipro,
+    },
+    {
+      title: "Asian Paints Conferences",
+      description: "Vibrant and creative conferences for Asian Paints, blending innovation with elegance.",
+      image: asianPaints,
+    },
+    {
+      title: "Kamdhenu Paints Product Launches",
+      description: "Bold and colorful product launches for Kamdhenu Paints, showcasing quality and creativity.",
+      image: kamdhenu,
+    },
+    {
+      title: "Samsung Gala Events",
+      description: "Cutting-edge gala events for Samsung, celebrating innovation with sophistication.",
+      image: samsung,
+    },
+    {
+      title: "Insurance Company Summits",
+      description: "Strategic summits for Insurance Company, designed for impact and engagement.",
+      image: insurance,
+    },
+  ];
 
 const CorporateEvents = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);

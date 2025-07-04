@@ -80,7 +80,7 @@ const About = () => {
             className="text-center mb-16"
           >
             <h1 className="font-playfair text-5xl md:text-6xl font-bold text-gray-800 mb-6">
-              About <span className="text-gradient">VK Wedding</span>
+              About <span className="text-gradient">VK Wedding Planners & Events</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               We are passionate storytellers who believe every love story deserves a perfect celebration. 

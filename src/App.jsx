@@ -9,6 +9,7 @@ import About from '@/pages/About';
 import Services from '@/pages/Services';
 import Contact from '@/pages/Contact';
 import CorporateEvents from './pages/Corporate';
+import DestinationWedding from './pages/DestinationWedding';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/corporate-events" element={<CorporateEvents/>} />
+             <Route path="/destination-wedding/:location" element={<DestinationWedding />} />
           </Routes>
         </main>
         <Footer />

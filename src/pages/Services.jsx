@@ -21,7 +21,7 @@ import destinationImg from '../assets/Destination.jpg';
 import royalImg from '../assets/royal.jpg';
 import beachImg from '../assets/Goa.jpg';
 import hillImg from '../assets/hill.jpg';
-import corporateImg from '../assets/royal2.jpg';
+import corporateImg from '../assets/corporate1.jpg';
 
 
 const weddingServicesData = [
